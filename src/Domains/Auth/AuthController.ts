@@ -3,7 +3,6 @@ import { AuthService } from './AuthService'
 
 export class AuthController {
   async handle(req: Request, res: Response) {
-    console.log(req.body)
     const { email, password } = req.body
 
     const authService = new AuthService()
