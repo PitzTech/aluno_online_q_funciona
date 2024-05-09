@@ -1,3 +1,5 @@
+import { IUser } from './types'
+
 export class UserRepository {
   async getUsers() {
     const db: IUser[] = [

@@ -1,19 +1,12 @@
+import { UserRepository } from '../Users'
 
-
-interface IFindOne {
-  email: string
-}
-
-interface IUser {
-  name: string
+interface ILoginParams {
   email: string
   password: string
-  birthday?: Date
 }
 
-
-class AuthService {
-  async login({ email, password }) {
+export class AuthService {
+  async login({ email, password }: ILoginParams) {
     const userRepository = new UserRepository()
     const users = userRepository.getUsers()
 
@@ -23,6 +16,6 @@ class AuthService {
       }
     })
 
-    
+
   }
 }
