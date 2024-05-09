@@ -16,6 +16,6 @@ export class AuthService {
       }
     })
 
-
+    return user
   }
 }
