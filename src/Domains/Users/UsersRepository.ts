@@ -1,4 +1,4 @@
-class UserRepository {
+export class UserRepository {
   async getUsers() {
     const db: IUser[] = [
       {
