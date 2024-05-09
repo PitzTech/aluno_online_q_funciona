@@ -6,7 +6,7 @@ interface ILoginParams {
 }
 
 export class AuthService {
-  async login({ email, password }: ILoginParams) {
+  async login({ email, password }: ILoginParams): Promise<boolean> {
     const userRepository = new UserRepository()
     const users = await userRepository.getUsers()
 
@@ -16,6 +16,7 @@ export class AuthService {
       }
     })
 
-    return user
+    const isUserAuthenticated = !!user ? true : false
+    return isUserAuthenticated
   }
 }

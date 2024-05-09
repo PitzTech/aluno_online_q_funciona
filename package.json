@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "express": "^4.19.2",
+    "ts-node-dev": "1.1.8",
     "typescript": "^5.4.5"
   },
   "devDependencies": {
