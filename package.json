@@ -5,14 +5,13 @@
   "repository": "https://github.com/PitzTech/aluno_online_q_funciona",
   "author": "Victor Laurentino <victorlaurentino7@gmail.com>",
   "license": "MIT",
-  "type": "module",
   "scripts": {
     "start": "yarn ts-node-dev ./src/server.ts",
     "build": "yarn tsc",
     "postinstall": "yarn build",
     "typeorm": "typeorm-ts-node-esm",
     "migration:create": "typeorm migration:create ./db/migration/Create_User_Table",
-    "migration:run": "typeorm migration:run -- -d ./db/data-source.ts"
+    "migration:run": "typeorm -- migration:run -d ./db/data-source.ts"
   },
   "dependencies": {
     "dotenv": "16.4.5",
