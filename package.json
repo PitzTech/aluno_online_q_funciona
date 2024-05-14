@@ -11,7 +11,8 @@
     "postinstall": "yarn build",
     "typeorm": "typeorm-ts-node-esm",
     "migration:create": "typeorm migration:create ./db/migration/Create_User_Table",
-    "migration:run": "typeorm -- migration:run -d ./db/data-source.ts"
+    "migration:run": "yarn typeorm -- migration:run -d ./db/data-source.ts",
+    "entity:create": "yarn typeorm entity:create ./db/entity/User"
   },
   "dependencies": {
     "dotenv": "16.4.5",
