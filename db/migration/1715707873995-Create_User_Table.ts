@@ -1,10 +1,10 @@
-const { entityName } = require('../entity/User')
+import { entityName } from '../entity/User'
 
-const { QueryRunner, Table } = require("typeorm")
+import { MigrationInterface, QueryRunner, Table } from "typeorm"
 
-module.exports = class CreateUserTable1715707873995 {
+export class CreateUserTable1715707873995 implements MigrationInterface {
 
-  async up(queryRunner) {
+  async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
       new Table({
         name: entityName,
@@ -56,7 +56,7 @@ module.exports = class CreateUserTable1715707873995 {
     )
   }
 
-  async down(queryRunner) {
+  async down(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.dropTable(entityName)
   }
 
