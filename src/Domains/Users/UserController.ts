@@ -1,11 +1,14 @@
 import { Request, Response } from "express"
-import { UserRepository } from './UsersRepository'
+import { UsersService } from './UsersService'
 
 export class UserController {
-  async handle(req: Request, res: Response) {
+  async create(req: Request, res: Response) {
+    const { email, name, surname } = req.body
 
-    const userRepository = new UserRepository()
-    const user = await userRepository.createUser()
+    const birthday = new Date()
+
+    const usersService = new UsersService()
+    const user = await usersService.create({ email, name, surname, birthday })
 
     const response = {
       body: user
