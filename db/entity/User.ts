@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm"
+import { Column, Entity, ManyToMany, PrimaryGeneratedColumn } from "typeorm"
+import { Course } from './Course'
 
 export const entityName = 'users'
 
@@ -31,4 +32,9 @@ export class User {
 
   @Column("varchar", { length: 100 })
   password: string
+
+  // Relationships
+
+  @ManyToMany(() => Course, (course) => course.users)
+  courses: Course[]
 }

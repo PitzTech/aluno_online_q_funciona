@@ -10,9 +10,10 @@
     "build": "yarn tsc",
     "postinstall": "yarn build",
     "typeorm": "typeorm-ts-node-commonjs",
-    "migration:create": "typeorm migration:create ./db/migration/Create_User_Collumn_Password",
+    "migration:create": "yarn typeorm migration:create ./db/migration/Create_Courses_Table",
     "migration:run": "yarn typeorm -- migration:run -d ./db/data-source.ts",
-    "entity:create": "yarn typeorm entity:create ./db/entity/User"
+    "entity:create": "yarn typeorm entity:create ./db/entity/User",
+    "migration:revert": "yarn typeorm migration:revert -- ./db/entity/User"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
