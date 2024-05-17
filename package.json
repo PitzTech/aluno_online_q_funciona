@@ -10,11 +10,12 @@
     "build": "yarn tsc",
     "postinstall": "yarn build",
     "typeorm": "typeorm-ts-node-commonjs",
-    "migration:create": "typeorm migration:create ./db/migration/Create_User_Table",
+    "migration:create": "typeorm migration:create ./db/migration/Create_User_Collumn_Password",
     "migration:run": "yarn typeorm -- migration:run -d ./db/data-source.ts",
     "entity:create": "yarn typeorm entity:create ./db/entity/User"
   },
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "dotenv": "16.4.5",
     "express": "4.19.2",
     "pg": "8.11.5",

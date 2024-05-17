@@ -28,4 +28,7 @@ export class User {
 
   @Column("varchar", { length: 12 })
   subscription: string
+
+  @Column("varchar", { length: 100 })
+  password: string
 }
